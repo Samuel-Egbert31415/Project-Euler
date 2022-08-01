@@ -46,6 +46,10 @@ while (sympy.isprime(quotient) == False) and (quotient != 1):  #if the quotient 
 
 print(prime_divisors)
 
+# the output is [71, 839, 1471, 6857]
+# 6857 is the biggest prime factor
+
+
 
 
 
