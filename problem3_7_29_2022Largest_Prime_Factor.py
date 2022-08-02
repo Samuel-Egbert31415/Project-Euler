@@ -18,16 +18,6 @@ quotient = 600851475143 # will be the big number divided by our primes as we go.
 
 prime_divisors = []
 
-
-def is_integer(n):
-    """This function will help me get around the weird floating errors of python saying 5/5 is not an integer"""
-    try:
-        float(n)
-    except ValueError:
-        return False
-    else:
-        return float(n).is_integer()
-
 # Take the big number and divide it by a prime
 # keep dividing it till you can't
 # go on to the next prime and divide till can't
@@ -35,7 +25,7 @@ def is_integer(n):
 while (sympy.isprime(quotient) == False) and (quotient != 1):  #if the quotient is prime, we know we are done
 
     #Try to divide the quotient by the next known prime as many times as possible
-    while is_integer(quotient / sympy.nextprime(the_next_prime)) == True:
+    while (quotient / sympy.nextprime(the_next_prime)).is_integer() == True:
         prime_divisors.append(sympy.nextprime(the_next_prime))
         quotient = quotient / sympy.nextprime(the_next_prime)
         print(prime_divisors)
